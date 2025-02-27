@@ -13,6 +13,8 @@ This project is built with:
 - Report uncollected trash
 - RESTful API for easy integration
 
+---
+
 ## Installation & Setup
 
 ### Prerequisites
@@ -26,26 +28,33 @@ This project is built with:
 ```sh
 git clone https://github.com/YOUR_USERNAME/TrashSync.git
 cd TrashSync
+```
 
-3. Create a virtual environment & activate it:
-# Windows
-python -m venv env
+2. Create a virtual environment & activate it:
+```sh
+python -m venv env          # Windows
 env\Scripts\activate
 
-# Mac/Linux
-python -m venv env
+python -m venv env          # Mac/Linux
 source env/bin/activate
+```
 
-4. Install dependencies:
+3. Install dependencies:
+```sh
 pip install flask sqlite3
+```
  
-5. Initialize the database:
+4. Initialize the database:
+```sh
 python database.py
+```
 
-6. Start the Flask server:
+5. Start the Flask server:
+```sh
 python server.py
+```
 
-7. Open `index.html` in your browser:
+6. Open `index.html` in your browser:
 - Right-click → Open with Live Server  
 
 ## API Documentation
@@ -60,24 +69,33 @@ The backend provides RESTful APIs for scheduling and reporting waste pickups.
  "location": "123 Main St",
  "date": "2025-02-27"
 }
+```
 
 **Response:**
+```json
 {"message": "Pickup Scheduled"}
+```
 
 ### GET /pickups - Retrieve All Pickups
 **Response:**
+```
 [
     [1, "John Doe", "123 Main St", "2025-02-27", "Pending"]
 ]
+```
 
 ### POST /report - Report Uncollected Trash:
 **Request:**
+```json
 {
     "id": 1
 }
+```
 
 **Response:**
+```json
 {"message": "Trash Reported"}
+```
 
 ## Frontend Usage
 
@@ -105,4 +123,3 @@ python server.py
 * POST /report - Report a pickup
 
 Confirm changes via GET /pickups
-
