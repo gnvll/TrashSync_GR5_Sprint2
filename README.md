@@ -23,23 +23,29 @@ This project is built with:
 ### How to Install & Run the Project
 
 1. Clone the repository:
+```sh
 git clone https://github.com/YOUR_USERNAME/TrashSync.git
 cd TrashSync
 
-2. Create a virtual environment & activate it:
-env\Scripts\activate # for Windows
-python -m venv env source env/bin/activate #for Mac/Linux
+3. Create a virtual environment & activate it:
+# Windows
+python -m venv env
+env\Scripts\activate
 
-3. Install dependencies:
+# Mac/Linux
+python -m venv env
+source env/bin/activate
+
+4. Install dependencies:
 pip install flask sqlite3
  
-4. Initialize the database:
+5. Initialize the database:
 python database.py
 
-5. Start the Flask server:
+6. Start the Flask server:
 python server.py
 
-6. Open `index.html` in your browser:
+7. Open `index.html` in your browser:
 - Right-click → Open with Live Server  
 
 ## API Documentation
@@ -48,7 +54,7 @@ The backend provides RESTful APIs for scheduling and reporting waste pickups.
 
 ### POST /schedule - Schedule a Pickup 
 **Request:**
-'''json
+```json
 {
  "user": "John Doe",
  "location": "123 Main St",
